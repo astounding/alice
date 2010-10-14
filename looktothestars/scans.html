@@ -1,0 +1,64 @@
+<?PHP
+  if (isset($_GET['p']) && preg_match('/^\d+$/', $_GET['p']) && $_GET['p'] < 849) {
+    $page = $_GET['p'] + 0;
+  } else {
+    $page = 1;
+  }
+  $num = substr("00".$page, -3);
+  $next = $page + 1;
+  if ($next > 848) {
+    $next = 1;
+  }
+  $prev = $page - 1;
+  if ($prev < 1) {
+    $prev = 848;
+  }
+  
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Scanned Image <?PHP echo $page; ?> - Look to the Stars - by Alice Isom Gubler Stratton</title>
+    <link rel="stylesheet" type="text/css" href="../style.css" />
+  </head>
+
+  <body><div id="content">
+
+<div class="navbar">
+  <div class="prev"><a href="scans.html?p=<?PHP echo $prev; ?>">&lt;&lt; Prev &lt;&lt;</a></div>
+  <div class="next"><a href="scans.html?p=<?PHP echo $next; ?>">&gt;&gt; Next &gt;&gt;</a></div>
+  <div class="mid"><a href="../index.html">[ Writings ]</a></div>
+  <div class="empty"></div>
+</div>
+
+<div class="header">
+  <div class="title">Look to the Stars</div>
+  <div class="author">by Alice Isom Gubler Stratton</div>
+</div>
+
+<div class="body">
+
+<div class="chapter">
+  <div class="chaptersuper">Scanned Image</div>
+  <div class="chaptername"><?PHP echo $page; ?></div>
+</div>
+
+<a href="scans.html?p=<?PHP echo $next; ?>"><img id="scan_image" src="scan<?PHP echo $num; ?>.jpg" style="margin: 0; margin-left: auto; margin-right: auto; width: 700px; border: 1px solid black;" /></a>
+
+</div>
+
+<div class="footer">
+  <div class="copyright">
+Copyright &copy; 1983-1985 Alice Isom Gubler Stratton - All Rights Reserved.<br />
+No part of this book may be reproduced in any form without permission in writing from the author or her trustees.
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="prev"><a href="scans.html?p=<?PHP echo $prev; ?>">&lt;&lt; Prev &lt;&lt;</a></div>
+  <div class="next"><a href="scans.html?p=<?PHP echo $next; ?>">&gt;&gt; Next &gt;&gt;</a></div>
+  <div class="mid"><a href="../index.html">[ Writings ]</a></div>
+  <div class="empty"></div>
+</div>
+
+  </div></body>
+</html>
