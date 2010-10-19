@@ -1,7 +1,7 @@
 BODY { margin: 0; border: 0; padding: 0; background-color: #c0c0c0; font-family: "Trebuchet MS",Arial,Helvetica,sans-serif; }
 #content { margin-top: 30px; margin-right: auto; margin-left: auto; margin-bottom: 30px; text-align: center; width: 750px; }
 H1 { margin: 0; border: 0; padding: 0; }
-.navbar { margin: 0; border: 0; padding: 5px 20px 5px 20px; height: 1.2em; overflow: hidden; background-color: #f0f0f0; text-align: center; }
+.navbar { position: relative; margin: 0; border: 0; padding: 0; height: 1.8em; background-color: #f0f0f0; text-align: center; }
 .header { margin: 0; border: 0; padding: 20px; background-color: white; text-align: center; }
 .footer { margin: 0; border: 0; padding: 20px; background-color: white; text-align: center; }
 .body { margin: 0; border: 0; padding: 20px; background-color: white; text-align: center; text-align: left; }
@@ -27,9 +27,9 @@ BLOCKQUOTE { margin: 30px; border: 0; padding: 30px; background-color: #f0f0f0; 
 .footnotes > h1 { font-size: 1.1em; font-weight: bold; }
 .footnote { display: inline: margin: 0; border: 1px solid black; padding: 1px; background-color: #e0e0e0; font-size: 0.5em; top: -1.5em; position: relative; }
 A { text-decoration: none; } 
-.mid { white-space: nowrap; margin: 0; margin-left: auto; margin-right: auto; text-align: center; border: 0; padding: 0; }
-.prev { display: inline; white-space: nowrap; float: left; }
-.next { display: inline; white-space: nowrap; float: right; }
+.mid { position: absolute; top: 0; left: 0; width: 750px; white-space: nowrap; margin: 0; margin-left: auto; margin-right: auto; text-align: center; border: 0; padding: 0; padding-top: 5px; z-index: 0; }
+.prev { position: absolute; top: 0; left: 0; padding: 0; padding-top: 5px; padding-left: 20px; white-space: nowrap; z-index: 1; }
+.next { position: absolute; top: 0; right: 0; padding: 0; padding-top: 5px; padding-right: 20px; white-space: nowrap; z-index: 1; }
 .empty { clear: both; height: 0px; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 .mapbox { display: block; margin: 10px; margin-left: auto; margin-right: auto; border: 1px solid black; padding: 20px; background-color: #b0b0b0; text-align: center; text-indent: 0; }
