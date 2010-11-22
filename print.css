@@ -65,5 +65,4 @@ A:link, A:visited, A:hover, A:active { color: black; }
 .piccaption { text-align: center; margin: 0; border: 0; padding: 0; padding-top: 0.3em; color: black; font-size: 1.1em; }
 .bigverticalspace { display: block; height: 10em; }
 .scanlink { display: none; }
-PERSON:hover { text-decoration: underline; }
-PLACE:hover { text-decoration: underline; }
+.noprint { display: none; }
