@@ -56,7 +56,9 @@ BLOCKQUOTE { margin: 30px; border: 0; padding: 30px; background-color: #f0f0f0; 
 .copyright { font-style: italic; font-size: 0.7em; text-align: center; }
 .footnotes { margin: 0; margin-top: 50px; }
 .footnotes > h1 { font-size: 1.1em; font-weight: bold; }
-.footnote { display: inline; margin: 0; border: 1px solid black; padding: 1px; background-color: #e0e0e0; font-size: 0.5em; top: -1.5em; position: relative; }
+.footnote { display: inline; margin: 0; border: 0; padding: 1px; background-color: #c0c8d0; font-size: 0.6em; top: -0.4em; position: relative; text-align: center; font-weight: bold; }
+a.footnote:link, a.footnote:visited, a.footnote:active { color: black; }
+a.footnote:hover { color: blue; background-color: #fffcf6; }
 A { text-decoration: none; } 
 .mid { position: absolute; top: 0; left: 0; width: 750px; white-space: nowrap; margin: 0; margin-left: auto; margin-right: auto; text-align: center; border: 0; padding: 0; padding-top: 5px; z-index: 0; }
 .prev { position: absolute; top: 0; left: 0; padding: 0; padding-top: 5px; padding-left: 20px; white-space: nowrap; z-index: 1; }
@@ -72,6 +74,6 @@ A { text-decoration: none; }
 .picboxleft > IMG { display: block; text-align: center; margin: 0; border: 0; padding: 0; }
 .piccaption { text-align: center; margin: 0; border: 0; padding: 0; padding-top: 5px; color: black; font-size: 1.1em; }
 .bigverticalspace { display: block; height: 10em; }
-.scanlink { display: inline; margin: 0; border: 1px solid black; padding: 1px; background-color: #c0c0c0; font-size: 0.4em; top: -2em; position: relative; }
+.scanlink { display: inline; margin: 0; border: 1px solid #c0c8d0; padding: 2px; background-color: #f0f8ff; font-size: 0.5em; top: -0.4em; position: relative; text-align: center; }
 PERSON:hover { text-decoration: underline; }
 PLACE:hover { text-decoration: underline; }
