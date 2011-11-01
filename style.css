@@ -45,6 +45,7 @@ P { margin: 0; padding: 0; border: 0; text-indent: 30px; line-height: 1.5em; }
 .doubleindent { text-indent: 60px; }
 .indenttocenter { text-indent: 50%; }
 .textcenter { text-align: center; }
+.textright { text-align: right; }
 .italic { font-style: italic; }
 .bold { font-weight: bold; }
 BLOCKQUOTE { margin: 30px; border: 0; padding: 30px; background-color: #f0f0f0; }
