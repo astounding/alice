@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Look to the Stars - by Alice Isom Gubler Stratton - Scanned Pages</title>
+    <script type="text/javascript">
+var img_right = 0,
+    img_left  = 0,
+    cur_hash  = '';
+
+function load_images() {
+  var hash = unescape(self.document.location.hash.substr(1));
+  if (hash.match(/^scan=\d+$/)) {
+    hash = parseInt(hash.substr(5));
+    if (hash < 1) {
+      hash = 1;
+      window.location.hash = "scan=" + hash.toString();
+    } else if (hash > 847) {
+      hash = 847;
+      window.location.hash = "scan=" + hash.toString();
+    } else if (hash % 2 == 0) {
+      hash -= 1;
+      window.location.hash = "scan=" + hash.toString();
+    }
+  } else {
+    hash = 1;
+    window.location.hash = "scan=" + hash.toString();
+  }
+  if (img_right != hash + 1) {
+    img_right = hash + 1;
+    var url = "./scan" + ("000"+img_right.toString()).substr(-3) + '.jpg';
+    document.getElementById('rightimg').src = url;
+  }
+  if (img_left != hash) {
+    img_left = hash;
+    var url ="./scan" + ("000"+img_left.toString()).substr(-3) + '.jpg';
+    document.getElementById('leftimg').src = url;
+  }
+}
+
+// NOTE: This method of checking for location hash changes DOES have a
+// race condition... But that shouldn't matter, so I'm ignoring it.
+
+function check_hash() {
+  if (cur_hash != unescape(self.document.location.hash.substr(1))) {
+    load_images();
+    cur_hash = unescape(self.document.location.hash.substr(1));
+  }
+}
+
+function init() {
+  load_images();
+  cur_hash = unescape(self.document.location.hash.substr(1));
+  setInterval(check_hash, 500);
+}
+
+function increment() {
+  if (img_left < 846) {
+    window.location.hash = "scan=" + (img_left + 2).toString();
+  } else if (img_left == 846) {
+    window.location.hash = "scan=847";
+  }
+  return false;
+}
+
+function decrement() {
+  if (img_left > 3) {
+    window.location.hash = "scan=" + (img_left - 2).toString();
+  } else if (img_left == 2) {
+    window.location.hash = "scan=1";
+  }
+  return false;
+}
+    </script>
+    <style type="text/css">
+html {
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  background-color: #c0d0c8;
+  background: -moz-linear-gradient(top, #c0d0c8, #808488);
+  background: -webkit-gradient(linear, left top, left bottom, from(#c0d0c8), to (#808884));
+}
+
+body {
+  position: absolute;
+  height: auto;
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+}
+
+#content {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+}
+
+#leftimg {
+  position: absolute;
+  top: 10px;
+  left: 1%;
+  border: 1px solid black;
+  width: 49%;
+  box-shadow: 6px 8px 4px #404040;
+  -moz-box-shadow: 6px 8px 4px #404040;
+  -webkit-box-shadow: 6px 8px 4px #404040;
+}
+
+#rightimg {
+  position: absolute;
+  top: 10px;
+  right: 1%;
+  border: 1px solid black;
+  width: 49%;
+  box-shadow: 6px 8px 4px #404040;
+  -moz-box-shadow: 6px 8px 4px #404040;
+  -webkit-box-shadow: 6px 8px 4px #404040;
+}
+
+#topbar {
+  position: absolute;
+  background-color: #e0d8d0;
+  width: 100%;
+  height: 2em;
+  border-bottom: 1px solid black;
+  box-shadow: 0px 4px 4px #404040;
+  -moz-box-shadow: 0px 4px 4px #404040;
+  -webkit-box-shadow: 0px 4px 4px #404040;
+  text-align: center;
+}
+
+#title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 2px 20px 2px 20px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+#author {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px 20px 2px 20px;
+  font-size: 1.4em;
+}
+
+#centernav {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0;
+  left: 0;
+}
+
+.simlink {
+  margin: 2px 20px 2px 20px;
+  color: blue;
+  font-weight: bold;
+}
+.simlink:hover {
+  cursor: pointer;
+  color:  #4444dd;
+}
+
+a { text-decoration: none; } 
+
+    </style>
+  </head>
+
+  <body onload="init();">
+    <div id="topbar">
+      <div id="title">
+        Look to the Stars
+      </div>
+      <div id="author">
+        by Alice Isom Gubler Stratton
+      </div>
+      <div id="centernav">
+        <span class="simlink" onclick="javascript: decrement();">&lt;&lt;&nbsp;Prev&nbsp;&lt;&lt;</span>&nbsp;<span class="simlink" onclick="javascript: window.location='contents.html';">[&nbsp;Contents&nbsp;]</span>&nbsp;<span class="simlink" onclick="javascript: increment();">&gt;&gt;&nbsp;Next&nbsp;&gt;&gt;</span>
+      </div>
+    </div>
+    <div id="content">
+      <img src="" id="leftimg" onclick="javascript: decrement();" /><img src="" id="rightimg" onclick="javascript: increment();" />
+    </div>
+    <div id="bottombar">Heigh ho!</div>
+  </body>
+</html>
