@@ -3,54 +3,56 @@
   <head>
     <title>Look to the Stars - by Alice Isom Gubler Stratton - Scanned Pages</title>
     <script type="text/javascript">
+
+var imgcache = [];
 var img_right = 0,
     img_left  = 0,
-    cur_hash  = '';
+    cur_frag  = '';
 
 function load_images() {
-  var hash = unescape(self.document.location.hash.substr(1));
-  if (hash.match(/^scan=\d+$/)) {
-    hash = parseInt(hash.substr(5));
-    if (hash < 1) {
-      hash = 1;
-      window.location.hash = "scan=" + hash.toString();
-    } else if (hash > 847) {
-      hash = 847;
-      window.location.hash = "scan=" + hash.toString();
-    } else if (hash % 2 == 0) {
-      hash -= 1;
-      window.location.hash = "scan=" + hash.toString();
+  var frag = unescape(self.document.location.hash.substr(1));
+  if (frag.match(/^scan=\d+$/)) {
+    frag = parseInt(frag.substr(5));
+    if (frag < 1) {
+      frag = 1;
+      window.location.hash = "scan=" + frag.toString();
+    } else if (frag > 847) {
+      frag = 847;
+      window.location.hash = "scan=" + frag.toString();
+    } else if (frag % 2 == 0) {
+      frag -= 1;
+      window.location.hash = "scan=" + frag.toString();
     }
   } else {
-    hash = 1;
-    window.location.hash = "scan=" + hash.toString();
+    frag = 1;
+    window.location.hash = "scan=" + frag.toString();
   }
-  if (img_right != hash + 1) {
-    img_right = hash + 1;
+  if (img_right != frag + 1) {
+    img_right = frag + 1;
     var url = "./scan" + ("000"+img_right.toString()).substr(-3) + '.jpg';
     document.getElementById('rightimg').src = url;
   }
-  if (img_left != hash) {
-    img_left = hash;
+  if (img_left != frag) {
+    img_left = frag;
     var url ="./scan" + ("000"+img_left.toString()).substr(-3) + '.jpg';
     document.getElementById('leftimg').src = url;
   }
 }
 
-// NOTE: This method of checking for location hash changes DOES have a
+// NOTE: This method of checking for location fragment changes DOES have a
 // race condition... But that shouldn't matter, so I'm ignoring it.
 
-function check_hash() {
-  if (cur_hash != unescape(self.document.location.hash.substr(1))) {
+function check_frag() {
+  if (cur_frag != unescape(self.document.location.hash.substr(1))) {
     load_images();
-    cur_hash = unescape(self.document.location.hash.substr(1));
+    cur_frag = unescape(self.document.location.hash.substr(1));
   }
 }
 
 function init() {
   load_images();
-  cur_hash = unescape(self.document.location.hash.substr(1));
-  setInterval(check_hash, 500);
+  cur_frag = unescape(self.document.location.hash.substr(1));
+  setInterval(check_frag, 500);
 }
 
 function increment() {
