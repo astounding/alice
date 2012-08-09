@@ -1,3 +1,5 @@
+@import url("http://www.aarongifford.com/fonts/fonts.css");
+
 HTML {
   height: auto;
   min-height: 100%;
@@ -12,9 +14,9 @@ BODY {
   border: 0;
   padding: 0;
   background-color: #c0d0c8;
-  font-family: "Trebuchet MS",Arial,Helvetica,sans-serif;
+  font-family: Lusitana,serif;
   background: -moz-linear-gradient(top, #c0d0c8, #808488);
-  background: -webkit-gradient(linear, left top, left bottom, from(#c0d0c8), to (#808884));
+  background: -webkit-gradient(linear, left top, left bottom, from(#c0d0c8), to (#808488));
 }
 
 #content {
