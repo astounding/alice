@@ -57,6 +57,7 @@ A:link, A:visited, A:hover, A:active { color: black; }
 .next { display: none; }
 .empty { clear: both; height: 0em; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
+.entrydate { font-size: 1.1em; font-weight: bold; }
 .mapbox { display: block; margin: 0.7em; margin-left: auto; margin-right: auto; border: 0.1em solid black; padding: 1.4em; text-align: center; text-indent: 0; }
 .picbox { margin: 0.7em; margin-left: auto; margin-right: auto; border: 0.1em solid black; padding: 1.4em; text-align: center; }
 .picbox > IMG { display: block; text-align: center; margin: 0; border: 0; padding: 0; }
