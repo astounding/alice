@@ -70,6 +70,7 @@ A { text-decoration: none; }
 .empty { clear: both; height: 0px; }
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 .ednote { font-size: 0.9em; padding: 10px; border: 1px dotted black; background-color: #efe8e0; }
+.entrydate { font-size: 1.1em; font-weight: bold; }
 
 .hspace20 { width: 20px; margin: 0; border: 0; padding: 0; display: inline-block; white-space: pre-wrap; }
 .hspace30 { width: 30px; margin: 0; border: 0; padding: 0; display: inline-block; white-space: pre-wrap; }
