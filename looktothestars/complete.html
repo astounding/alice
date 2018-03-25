@@ -41,8 +41,8 @@ function include_book_file($filename) {
       if (preg_match('/^\s*<div\s+class="footer">\s*$/', $line)) {
         $state = 2;
       } else {
-        $line = preg_replace('/<a href=\"(?:.*\/)?(title2?|dedication|intro2?|acknowledgements|contents|chapter\d\d)\.html\"/', "href=\"#docpage_\\1\"", $line);
         $line = preg_replace('/<a href=\"#(.+?)\"/', "<a href=\"#" . $anchor . "_\\1\"", $line);
+        $line = preg_replace('/<a href=\"(?:.*\/)?(title2?|dedication|intro2?|acknowledgements|contents|chapter\d\d)\.html\"/', "<a href=\"#docpage_\\1\"", $line);
         $line = preg_replace('/<a name=\"(.+?)\"/', "<a name=\"" . $anchor . "_\\1\"", $line);
         print $line;
       }
