@@ -20,6 +20,8 @@
 ## and strip out the top HTML and bottom HTML stuff so we can include the
 ## core body content in THIS file without generating invalid HTML.
 function include_book_file($filename) {
+  $anchor = preg_replace('/\.html$/', '', $filename);
+
   $fh = fopen($filename, 'r');
 
   ## 0 == skipping top part
@@ -39,6 +41,9 @@ function include_book_file($filename) {
       if (preg_match('/^\s*<div\s+class="footer">\s*$/', $line)) {
         $state = 2;
       } else {
+        $line = preg_replace('/<a href=\"(?:.*\/)?(title2?|dedication|intro2?|acknowledgements|contents|chapter\d\d)\.html\"/', "href=\"#docpage_\\1\"", $line);
+        $line = preg_replace('/<a href=\"#(.+?)\"/', "<a href=\"#" . $anchor . "_\\1\"", $line);
+        $line = preg_replace('/<a name=\"(.+?)\"/', "<a name=\"" . $anchor . "_\\1\"", $line);
         print $line;
       }
     }
@@ -129,6 +134,8 @@ $book_files = array(
 );
 
 foreach($book_files as $file) {
+  $anchor = preg_replace('/\.html$/', '', $file);
+  print "<a name=\"docpage_$anchor\"></a>\n";
   include_book_file($file);
 }
 
