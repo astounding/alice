@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+  <head>
+    <title>Look to the Stars - by Alice Isom Gubler Stratton</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" media="all" type="text/css" href="../style.css" />
+    <link rel="stylesheet" media="print" type="text/css" href="../print.css" />
+  </head>
+
+  <body><div id="content">
+
+<div class="navbar">
+  <div class="mid"><a href="../index.html">[ Writings ]</a></div>
+  <div class="empty"></div>
+</div>
+
+<div class="header">
+  <div class="title">Look to the Stars</div>
+  <div class="author">by Alice Isom Gubler Stratton</div>
+</div>
+
+<div class="body">
+
+<?PHP
+
+## Function to read a book chapter or other source HTML file line-by-line
+## and strip out the top HTML and bottom HTML stuff so we can include the
+## core body content in THIS file without generating invalid HTML.
+function include_book_file($filename) {
+  $fh = fopen($filename, 'r');
+
+  ## 0 == skipping top part
+  ## 1 == included body
+  ## 2 == skipping bottom part
+  $state = 0;
+
+  while (($line = fgets($fh)) !== false) {
+    ## Skip all lines until the <div class="body"> line is found.
+    ## Then print everything until the <div class="footer"> line is found.
+    if ($state == 0) {
+      if (preg_match('/^\s*<div\s+class="body">\s*$/', $line)) {
+        $state = 1;
+        print $line;
+      }
+    } else if ($state == 1) {
+      if (preg_match('/^\s*<div\s+class="footer">\s*$/', $line)) {
+        $state = 2;
+      } else {
+        print $line;
+      }
+    }
+  }
+  fclose($fh);
+}
+
+$book_files = array(
+  ## "cover.html",   ## TODO: If a scanned image of the book's cover is created, we may insert that here.
+  "title.html",
+  "dedication.html",
+  "intro.html",
+  "acknowledgements.html",
+  "contents.html",
+  "chapter01.html",
+  "chapter02.html",
+  "chapter03.html",
+  "chapter04.html",
+  "chapter05.html",
+  "chapter06.html",
+  "chapter07.html",
+  "chapter08.html",
+  "chapter09.html",
+  "chapter10.html",
+  "chapter11.html",
+  "chapter12.html",
+  "chapter13.html",
+  "chapter14.html",
+  "chapter15.html",
+  "chapter16.html",
+  "chapter17.html",
+  "chapter18.html",
+  "chapter19.html",
+  "chapter20.html",
+  "chapter21.html",
+  "chapter22.html",
+  "chapter23.html",
+  "chapter24.html",
+  "chapter25.html",
+  "chapter26.html",
+  "chapter27.html",
+  "chapter28.html",
+  "chapter29.html",
+  "chapter30.html",
+  "chapter31.html",
+  "chapter32.html",
+  "chapter33.html",
+  "chapter34.html",
+  "chapter35.html",
+  "chapter36.html",
+  "chapter37.html",
+  "chapter38.html",
+  "chapter39.html",
+  "chapter40.html",
+  "chapter41.html",
+  "chapter42.html",
+  "chapter43.html",
+  "chapter44.html",
+  "chapter45.html",
+  "chapter46.html",
+  "chapter47.html",
+  "chapter48.html",
+  "chapter49.html",
+  "chapter50.html",
+  "chapter51.html",
+  "chapter52.html",
+  "chapter53.html",
+  "chapter54.html",
+  "chapter55.html",
+  "title2.html",
+  "intro2.html",
+  "chapter56.html",
+  "chapter57.html",
+  "chapter58.html",
+  "chapter59.html",
+  "chapter60.html",
+  "chapter61.html",
+  "chapter62.html",
+  "chapter63.html",
+  "chapter64.html",
+  "chapter65.html",
+  "chapter66.html",
+  "chapter67.html",
+  "chapter68.html",
+  "chapter69.html",
+  "chapter70.html",
+  "chapter71.html"
+);
+
+foreach($book_files as $file) {
+  include_book_file($file);
+}
+
+?>
+
+<div class="footer">
+  <div class="copyright">
+Copyright &copy; 1983-1985 Alice Isom Gubler Stratton - All Rights Reserved.<br />
+No part of this book may be reproduced in any form without permission in writing from the author or her trustees.
+  </div>
+</div>
+
+<div class="navbar">
+  <div class="mid"><a href="../index.html">[ Writings ]</a></div>
+  <div class="empty"></div>
+</div>
+
+  </div></body>
+</html>
