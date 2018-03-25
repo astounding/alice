@@ -38,6 +38,7 @@ H1 { margin: 0; border: 0; padding: 0; }
 .header { margin: 0; border: 0; padding: 20px; background-color: #fffcf6; text-align: center; }
 .footer { margin: 0; border: 0; padding: 20px; background-color: #fffcf6; text-align: center; }
 .body { margin: 0; border: 0; padding: 20px; background-color: #fffcf6; text-align: center; text-align: left; }
+.bodybreak { border: 0; height: 2px; background: #333333; background-image: linear-gradient(to right, #cccccc, #333333, #cccccc); }
 P { margin: 0; padding: 0; border: 0; text-indent: 30px; line-height: 1.5em; }
 .vpad { padding-top: 10px; padding-bottom: 10px; }
 .bulletspace { text-align: center; margin-left: auto; margin-right: auto; padding-top: 10px; padding-bottom: 10px; text-indent: 0; }
