@@ -64,7 +64,7 @@ A { text-decoration: none; }
 
 .navbar { margin: 0; border: 0; padding: 0; background-color: #f0f0f0; width: 100%; position: relative; overflow: auto; }
 .prev { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: left; float: left; }
-.mid { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); }
+.mid { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); background-color: #f0f0f0; }
 .next { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: right; float: right; }
 .empty { margin: 0; border: 0; padding: 0; clear: both; height: 0; }
 
@@ -146,7 +146,7 @@ PLACE:hover { text-decoration: underline; }
 }
 
 /* Adapt the top-of-page navigation for narrow screen widths: */
-@media screen and (max-width: 350pt) {
+@media screen and (max-width: 380pt) {
   .navbar { overflow: visible; }
   .mid { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: center; position: absolute; left: 50%; transform: translate(-50%, 90%); }
 }
