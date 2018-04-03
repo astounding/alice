@@ -15,8 +15,7 @@ BODY {
   padding: 0;
   background-color: #c0d0c8;
   font-family: Lusitana,serif;
-  background: -moz-linear-gradient(top, #c0d0c8, #808488);
-  background: -webkit-gradient(linear, left top, left bottom, from(#c0d0c8), to (#808488));
+  background: linear-gradient(to bottom right, #c0d0c8, #808488);
 }
 
 #content {
@@ -27,41 +26,38 @@ BODY {
   text-align: center;
   width: 576pt;
   z-index: 0;
-  box-shadow: 6px 8px 4px #404040;
-}
-
-@media screen and (max-width: 576pt) {
-  #content { width: 100%; }
+  box-shadow: 6pt 8pt 4pt #404040;
 }
 
 H1 { margin: 0; border: 0; padding: 0; }
-.header { margin: 0; border: 0; padding: 20px; background-color: #fffcf6; text-align: center; }
-.footer { margin: 0; border: 0; padding: 20px; background-color: #fffcf6; text-align: center; }
-.body { margin: 0; border: 0; padding: 32pt; background-color: #fffcf6; text-align: center; text-align: left; }
-.bodybreak { border: 0; height: 2px; background: #333333; background-image: linear-gradient(to right, #cccccc, #333333, #cccccc); }
-P { margin: 0; padding: 0; border: 0; text-indent: 30px; line-height: 1.5em; }
-.vpad { padding-top: 10px; padding-bottom: 10px; }
-.bulletspace { text-align: center; margin-left: auto; margin-right: auto; padding-top: 10px; padding-bottom: 10px; text-indent: 0; }
-.bulletspace:after { content: "\2022 \2022 \2022"; }
+.header { margin: 0; border: 0; padding: 20pt; background-color: #fffcf6; text-align: center; }
+.footer { margin: 0; border: 0; padding: 20pt; background-color: #fffcf6; text-align: center; }
+.body { margin: 0; border: 0; padding: 25pt; background-color: #fffcf6; text-align: center; text-align: left; }
+.bodybreak { border: 0; height: 2pt; background: #333333; background-image: linear-gradient(to right, #cccccc, #333333, #cccccc); }
+P { margin: 0; padding: 0; border: 0; text-indent: 24pt; line-height: 1.5em; }
+.vpad { padding-top: 8pt; padding-bottom: 8pt; }
+.bulletspace { text-align: center; margin-left: auto; margin-right: auto; padding-top: 8pt; padding-bottom: 8pt; text-indent: 0; }
+.bulletspace:after { content: "\25c6 \25c6 \25c6"; }
 .noindent { text-indent: 0; }
-.indent { text-indent: 30px; }
-.doubleindent { text-indent: 60px; }
+.padbelow { padding-bottom: 2em; }
+.indent { text-indent: 24pt; }
+.doubleindent { text-indent: 48pt; }
 .indenttocenter { text-indent: 50%; }
 .textcenter { text-align: center; }
 .textright { text-align: right; }
 .italic { font-style: italic; }
 .bold { font-weight: bold; }
-BLOCKQUOTE { margin: 30px; border: 0; padding: 30px; background-color: #f0f0f0; }
+BLOCKQUOTE { margin: 24pt; border: 0; padding: 24pt; background-color: #f0f0f0; }
 .title { font-weight: bold; font-size: 2.0em; text-align: center; }
 .author { font-style: italic; font-size: 0.9em; text-align: center; }
-.chapter { font-weight: bold; text-align: center; padding: 50px; }
+.chapter { font-weight: bold; text-align: center; padding: 40pt; }
 .chaptersuper { font-size: 1.0em; }
 .chaptername { font-size: 1.7em; }
 .chaptersub { font-size: 1.2em; }
 .copyright { font-style: italic; font-size: 0.7em; text-align: center; }
-.footnotes { margin: 0; margin-top: 50px; }
+.footnotes { margin: 0; margin-top: 40pt; }
 .footnotes > h1 { font-size: 1.1em; font-weight: bold; }
-.footnote { display: inline; margin: 0; border: 0; padding: 1px; background-color: #c0c8d0; font-size: 0.6em; top: -0.4em; position: relative; text-align: center; font-weight: bold; }
+.footnote { display: inline; margin: 0; border: 0; padding: 1pt; background-color: #c0c8d0; font-size: 0.6em; top: -0.4em; position: relative; text-align: center; font-weight: bold; }
 a.footnote:link, a.footnote:visited, a.footnote:active { color: black; }
 a.footnote:hover { color: blue; background-color: #fffcf6; }
 A { text-decoration: none; } 
@@ -70,10 +66,10 @@ A { text-decoration: none; }
 .prev { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: left; float: left; }
 .mid { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: center; position: absolute; left: 50%; transform: translateX(-50%); }
 .next { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: right; float: right; }
-.empty { margin: 0; border: 0; padding: 0; clear: both; height: 0px; }
+.empty { margin: 0; border: 0; padding: 0; clear: both; height: 0; }
 
 .center { text-align: center; margin-left: auto; margin-right: auto; }
-.ednote { font-size: 0.9em; padding: 10px; border: 1px dotted black; background-color: #efe8e0; }
+.ednote { font-size: 0.9em; padding: 8pt; border: 1pt dotted black; background-color: #efe8e0; }
 .entrydate { font-size: 1.1em; font-weight: bold; }
 
 .hspace20 { width: 20pt; margin: 0; border: 0; padding: 0; display: inline-block; white-space: pre-wrap; }
@@ -89,17 +85,32 @@ A { text-decoration: none; }
 .picboxleft > IMG { display: block; text-align: center; margin: 0; border: 0; padding: 0; width: 100%; }
 .picboxcaption { text-align: center; margin: 0; border: 0; padding: 8pt 10pt 3pt 10pt; color: black; font-size: 0.9em; }
 
-.poetrybox { margin: 30px; border: 0; padding: 30px; background-color: #f0f0f0; text-align: center; }
+.poetrybox { margin: 24pt; border: 0; padding: 24pt; background-color: #f0f0f0; text-align: center; }
 .poemcontent { margin: 0 auto 0 auto; border: 0; padding: 0; display: inline-block; text-align: left; }
 .poemtitle { font-weight: bold; text-align: center; text-indent: 0; }
 .poembody { text-indent: 0; }
 .poemauthor { font-style: italic; text-indent: 10%; text-align: right; }
-.dropcap { text-indent: 0; }
-.dropcapword { font-size: 1.5em; font-family: serif; text-indent: 0; }
-.dropcapletter { font-size: 2.5em; color: #c00000; float: left; position: relative; top: 0.1em; margin: 0.1em; margin-right: 0; }
+
+.dropcap {
+  text-indent: 0;
+}
+.dropcapword {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.dropcap::first-letter {
+  float: left;
+  font-family: serif;
+  font-weight: bold;
+  font-size: 3.5em;
+  padding: 2pt;
+  display: inline;
+  initial-letter: 3.0 2;
+  color: #e00020;
+}
 
 .bigverticalspace { display: block; height: 10em; }
-.scanlink { display: inline; margin: 0; border: 1px solid #c0c8d0; padding: 2px; background-color: #f0f8ff; font-size: 0.5em; top: -0.4em; position: relative; text-align: center; }
+.scanlink { display: inline; margin: 0; border: 1pt solid #c0c8d0; padding: 2pt; background-color: #f0f8ff; font-size: 0.5em; top: -0.4em; position: relative; text-align: center; }
 PERSON:hover { text-decoration: underline; }
 PLACE:hover { text-decoration: underline; }
 .hidden { visibility: hidden; }
@@ -109,3 +120,34 @@ PLACE:hover { text-decoration: underline; }
 .articletitle:before { content: "\201c"; }
 .articletitle:after { content: "\201d"; }
 .noweb { display: none; }
+
+/* Once the screen size is the same or smaller than the page width, use 100% of the screen: */
+@media screen and (max-width: 576pt) {
+  #content {
+    margin: 0;
+    box-shadow: none;
+    width: 100%;
+  }
+
+  BLOCKQUOTE { margin: 8pt; padding: 8pt; }
+
+  P { text-indent: 18pt; }
+
+  .body { padding: 10pt; }
+  .indent { text-indent: 18pt; }
+  .doubleindent { text-indent: 36pt; }
+
+  .picbox { margin: 2pt; padding: 8pt; text-align: center; }
+  .picboxright { margin: 2pt; padding: 8pt; }
+  .picboxleft { margin: 2pt; padding: 8pt; }
+  .picboxcaption { padding: 2pt 3pt 2pt 3pt; }
+
+  .poetrybox { margin: 8pt; padding: 8pt; }
+}
+
+/* Adapt the top-of-page navigation for narrow screen widths: */
+@media screen and (max-width: 350pt) {
+  .navbar { overflow: visible; }
+  .mid { margin: 0; border: 0; padding: 5pt; white-space: nowrap; text-align: center; position: absolute; left: 50%; transform: translate(-50%, 90%); }
+}
+
