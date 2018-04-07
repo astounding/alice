@@ -39,6 +39,9 @@ P { margin: 0; padding: 0; border: 0; text-indent: 24pt; line-height: 1.5em; }
 .bulletspace { text-align: center; margin-left: auto; margin-right: auto; padding-top: 8pt; padding-bottom: 8pt; text-indent: 0; }
 .bulletspace:after { content: "\25c6 \25c6 \25c6"; }
 .noindent { text-indent: 0; }
+.versebox { margin: 12pt; border: 0; padding: 12pt; background-color: #f0f0f0; }
+.verse { text-indent: 5pt; margin-bottom: 3pt; }
+.versenum { display: inline-box; float: left; font-weight: bold; }
 .padbelow { padding-bottom: 2em; }
 .indent { text-indent: 24pt; }
 .doubleindent { text-indent: 48pt; }
@@ -47,6 +50,8 @@ P { margin: 0; padding: 0; border: 0; text-indent: 24pt; line-height: 1.5em; }
 .textright { text-align: right; }
 .italic { font-style: italic; }
 .bold { font-weight: bold; }
+.smallcaps { font-variant: small-caps; }
+.aside { font-style: italic; font-size: 0.9em; }
 BLOCKQUOTE { margin: 24pt; border: 0; padding: 24pt; background-color: #f0f0f0; }
 .title { font-weight: bold; font-size: 2.0em; text-align: center; }
 .author { font-style: italic; font-size: 0.9em; text-align: center; }
@@ -98,7 +103,7 @@ A { text-decoration: none; }
 }
 .dropcapword {
   font-weight: bold;
-  text-transform: uppercase;
+  font-variant: small-caps;
 }
 .dropcap::first-letter {
   float: left;
@@ -122,6 +127,20 @@ PLACE:hover { text-decoration: underline; }
 .articletitle:before { content: "\201c"; }
 .articletitle:after { content: "\201d"; }
 .noweb { display: none; }
+
+.vidbox {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 
 /* Once the screen size is the same or smaller than the page width, use 100% of the screen: */
 @media screen and (max-width: 576pt) {
