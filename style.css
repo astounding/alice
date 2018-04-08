@@ -35,21 +35,26 @@ H1 { margin: 0; border: 0; padding: 0; }
 .body { margin: 0; border: 0; padding: 25pt; background-color: #fffcf6; text-align: center; text-align: left; }
 .bodybreak { border: 0; height: 2pt; background: #333333; background-image: linear-gradient(to right, #cccccc, #333333, #cccccc); }
 P { margin: 0; padding: 0; border: 0; text-indent: 24pt; line-height: 1.5em; }
-.vpad { padding-top: 8pt; padding-bottom: 8pt; }
 .bulletspace { text-align: center; margin-left: auto; margin-right: auto; padding-top: 8pt; padding-bottom: 8pt; text-indent: 0; }
 .bulletspace:after { content: "\25c6 \25c6 \25c6"; }
 .noindent { text-indent: 0; }
 .versebox { margin: 12pt; border: 0; padding: 12pt; background-color: #f0f0f0; }
 .verse { text-indent: 5pt; margin-bottom: 3pt; }
 .versenum { display: inline-box; float: left; font-weight: bold; }
+.vpad { padding-top: 8pt; padding-bottom: 8pt; }
 .padbelow { padding-bottom: 2em; }
+.padabove{ padding-top: 2em; }
 .indent { text-indent: 24pt; }
 .doubleindent { text-indent: 48pt; }
 .indenttocenter { text-indent: 50%; }
 .textcenter { text-align: center; }
 .textright { text-align: right; }
+.normal { font-style: normal; }
+.oblique { font-style: oblique; }
 .italic { font-style: italic; }
 .bold { font-weight: bold; }
+.italic em { font-style: normal; }
+i em { font-style: normal; }
 .smallcaps { font-variant: small-caps; }
 .aside { font-style: italic; font-size: 0.9em; }
 BLOCKQUOTE { margin: 24pt; border: 0; padding: 24pt; background-color: #f0f0f0; }
