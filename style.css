@@ -82,7 +82,9 @@ A { text-decoration: none; }
 
 .center { text-align: center; margin-left: auto; margin-right: auto; }
 .ednote { font-size: 0.9em; padding: 8pt; border: 1pt dotted black; background-color: #efe8e0; }
-.entrydate { font-size: 1.1em; font-weight: bold; }
+
+.newentry { padding-top: 1.1em; }
+.entrydate { font-size: 1.1em; font-weight: bold; padding-right: 4pt; }
 
 .hspace20 { width: 20pt; margin: 0; border: 0; padding: 0; display: inline-block; white-space: pre-wrap; }
 .hspace30 { width: 30pt; margin: 0; border: 0; padding: 0; display: inline-block; white-space: pre-wrap; }
